@@ -36,6 +36,10 @@ public class Task implements Serializable, Cloneable {
             log.error("time below bound");
             throw new IllegalArgumentException("Time cannot be negative");
         }
+        if (start.getTime() >= end.getTime()) {
+            log.error("time not ok");
+            throw new IllegalArgumentException("End should be after start");
+        }
         if (interval < 1) {
             log.error("interval < than 1");
             throw new IllegalArgumentException("interval should be > 1");

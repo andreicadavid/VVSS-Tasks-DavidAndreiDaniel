@@ -16,3 +16,85 @@
 2025-03-17 18:59:38 INFO  Main:35 - saved data reading
 2025-03-17 18:59:38 INFO  Main:40 - application start
 2025-03-17 18:59:38 INFO  Controller:74 - Main controller initializing
+2025-03-18 10:08:06 INFO  Main:35 - saved data reading
+2025-03-18 10:08:06 INFO  Main:40 - application start
+2025-03-18 10:08:06 INFO  Controller:74 - Main controller initializing
+2025-03-31 17:23:53 INFO  Main:35 - saved data reading
+2025-03-31 17:23:53 INFO  Main:40 - application start
+2025-03-31 17:23:54 INFO  Controller:74 - Main controller initializing
+2025-03-31 17:24:01 INFO  Main:35 - saved data reading
+2025-03-31 17:24:01 INFO  Main:40 - application start
+2025-03-31 17:24:01 INFO  Controller:74 - Main controller initializing
+2025-03-31 17:33:49 INFO  Main:35 - saved data reading
+2025-03-31 17:33:49 INFO  Main:40 - application start
+2025-03-31 17:33:50 INFO  Controller:74 - Main controller initializing
+2025-03-31 17:34:07 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 17:34:12 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 17:34:41 INFO  Main:35 - saved data reading
+2025-03-31 17:34:41 INFO  Main:40 - application start
+2025-03-31 17:34:41 INFO  Controller:74 - Main controller initializing
+2025-03-31 17:34:50 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 17:37:22 INFO  Main:35 - saved data reading
+2025-03-31 17:37:22 INFO  Main:40 - application start
+2025-03-31 17:37:22 INFO  Controller:74 - Main controller initializing
+2025-03-31 17:37:24 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 17:37:37 INFO  TaskInfoController:24 - task info window initializing
+2025-03-31 17:37:37 ERROR Controller:127 - error loading task-info.fxml
+2025-03-31 17:37:46 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 17:37:57 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 17:38:23 INFO  Main:35 - saved data reading
+2025-03-31 17:38:23 INFO  Main:40 - application start
+2025-03-31 17:38:23 INFO  Controller:74 - Main controller initializing
+2025-03-31 17:47:44 INFO  Main:35 - saved data reading
+2025-03-31 17:47:44 INFO  Main:40 - application start
+2025-03-31 17:47:44 INFO  Controller:74 - Main controller initializing
+2025-03-31 17:47:46 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 17:52:22 INFO  Main:35 - saved data reading
+2025-03-31 17:52:22 INFO  Main:40 - application start
+2025-03-31 17:52:22 INFO  Controller:74 - Main controller initializing
+2025-03-31 17:52:24 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 17:53:19 INFO  Main:35 - saved data reading
+2025-03-31 17:53:19 INFO  Main:40 - application start
+2025-03-31 17:53:20 INFO  Controller:74 - Main controller initializing
+2025-03-31 17:53:22 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 17:53:34 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 17:53:49 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 18:07:15 INFO  Main:35 - saved data reading
+2025-03-31 18:07:15 INFO  Main:40 - application start
+2025-03-31 18:07:15 INFO  Controller:74 - Main controller initializing
+2025-03-31 18:41:43 INFO  Main:35 - saved data reading
+2025-03-31 18:41:43 INFO  Main:40 - application start
+2025-03-31 18:41:43 INFO  Controller:74 - Main controller initializing
+2025-03-31 18:41:45 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 18:42:04 ERROR Task:40 - time not ok
+2025-03-31 18:45:07 INFO  Main:35 - saved data reading
+2025-03-31 18:45:07 INFO  Main:40 - application start
+2025-03-31 18:45:07 INFO  Controller:74 - Main controller initializing
+2025-03-31 18:45:09 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 18:45:17 INFO  NewEditController:89 - new/edit window initializing
+2025-03-31 19:05:25 ERROR Task:40 - time not ok
+2025-03-31 19:05:25 ERROR Task:44 - interval < than 1
+2025-03-31 19:05:25 ERROR Task:40 - time not ok
+2025-03-31 19:06:06 ERROR Task:40 - time not ok
+2025-03-31 19:06:06 ERROR Task:44 - interval < than 1
+2025-03-31 19:06:06 ERROR Task:40 - time not ok
+2025-03-31 19:07:32 ERROR Task:40 - time not ok
+2025-03-31 19:07:32 ERROR Task:44 - interval < than 1
+2025-03-31 19:07:32 ERROR Task:40 - time not ok
+2025-03-31 19:07:46 ERROR Task:40 - time not ok
+2025-03-31 19:07:46 ERROR Task:44 - interval < than 1
+2025-03-31 19:07:46 ERROR Task:40 - time not ok
+2025-03-31 19:10:29 ERROR Task:40 - time not ok
+2025-03-31 19:10:29 ERROR Task:44 - interval < than 1
+2025-03-31 19:10:29 ERROR Task:44 - interval < than 1
+2025-03-31 19:10:29 ERROR Task:40 - time not ok
+2025-03-31 19:10:37 ERROR Task:40 - time not ok
+2025-03-31 19:10:37 ERROR Task:44 - interval < than 1
+2025-03-31 19:10:37 ERROR Task:44 - interval < than 1
+2025-03-31 19:10:37 ERROR Task:40 - time not ok
+2025-03-31 19:19:38 ERROR Task:40 - time not ok
+2025-03-31 19:19:38 ERROR Task:44 - interval < than 1
+2025-03-31 19:19:38 ERROR Task:44 - interval < than 1
+2025-03-31 19:19:38 ERROR Task:40 - time not ok
+2025-03-31 19:27:16 ERROR Task:36 - time below bound
+2025-03-31 19:27:16 ERROR Task:44 - interval < than 1
