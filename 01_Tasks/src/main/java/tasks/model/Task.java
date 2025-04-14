@@ -16,9 +16,9 @@ public class Task implements Serializable, Cloneable {
     private boolean active;
 
     private static final Logger log = Logger.getLogger(Task.class.getName());
-    private final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
-    public SimpleDateFormat getDateFormat(){
+    public static SimpleDateFormat getDateFormat(){
         return sdf;
     }
     public Task(String title, Date time) throws IllegalArgumentException{
