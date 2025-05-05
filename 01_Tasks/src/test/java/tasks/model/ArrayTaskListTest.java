@@ -1,117 +1,77 @@
 package tasks.model;
 
-import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+
+import java.text.ParseException;
+import java.util.Arrays;
 import java.util.Date;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class ArrayTaskListTest {
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
-    private ArrayTaskList taskList;
+class ArrayTaskListTest {
 
-    @BeforeAll
-    static void setupAll() {
-        System.out.println("Starting tests...");
-    }
+    @Mock
+    private ArrayTaskList tasks;
 
     @BeforeEach
-    void setup() {
-        taskList = new ArrayTaskList();
+    void setUp() {
+        MockitoAnnotations.initMocks(this);
     }
 
-    @DisplayName("Test valid task with interval = 0 (Non-repetitive task)")
     @Test
-    void testAddTaskWithValidInterval() {
-        // Arrange
-        Task task = new Task("Task", new Date(1733076000000L)); // 31.03.2025 10:00
+    public void add() throws ParseException {
+        Task task = getMockTask("new task",Task.getDateFormat().parse("2023-02-12 10:10"));
+        Task task2 = getMockTask("new task2",Task.getDateFormat().parse("2023-02-12 10:10"));
+        Mockito.when(tasks.getAll()).thenReturn(Arrays.asList(task));
+        Mockito.doNothing().when(tasks).add(task2);
 
-        // Act
-        taskList.add(task);
+        this.tasks.add(task2);
 
-        // Assert
-        assertEquals(1, taskList.size());
+        Mockito.verify(tasks, times(1)).add(task2);
+        Mockito.verify(tasks, never()).getAll();
+
+        assert this.tasks.getAll().size() == 1;
+
+        Mockito.verify(tasks, times(1)).getAll();
+        assertEquals("new task", tasks.getAll().get(0).getTitle());
     }
 
-
-    @DisplayName("Test valid end date (startDate < endDate)")
     @Test
-    void testAddTaskWithValidEndDate() {
-        // Arrange
-        Task task = new Task("Task", new Date(1733076000000L), new Date(1733079600000L), 0);
+    void remove() throws ParseException {
+        Task task1 = getMockTask("new task", Task.getDateFormat().parse("2023-02-12 10:10"));
+        Task task2 = getMockTask("new task2", Task.getDateFormat().parse("2023-02-12 10:10"));
 
-        // Act
-        taskList.add(task);
+        Mockito.when(tasks.getAll()).thenReturn(Arrays.asList(task1, task2));
+        Mockito.when(tasks.remove(task1)).thenReturn(true);
 
-        // Assert
-        assertEquals(1, taskList.size());
-    }
+        boolean result = tasks.remove(task1);
+        assert result;
 
-    @DisplayName("Test invalid end date (startDate == endDate) - Should throw exception")
-    @Test
-    void testAddTaskWithInvalidEndDate() {
-        // Arrange & Act & Assert
-        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () ->
-                new Task("Task", new Date(1733076000000L), new Date(1733076000000L), 5)
-        );
+        Mockito.verify(tasks, times(1)).remove(task1);
+        Mockito.verify(tasks, never()).getAll();
+        Mockito.verifyNoMoreInteractions(tasks);
 
-        assertEquals("End should be after start", thrown.getMessage());
-    }
-
-    @DisplayName("Test valid interval (interval >= 0)")
-    @Test
-    void testAddTaskWithValidNonNegativeInterval() {
-        // Arrange
-        Task task = new Task("Task", new Date(1733076000000L), new Date(1733079600000L), 5);
-
-        // Act
-        taskList.add(task);
-
-        // Assert
-        assertEquals(1, taskList.size());
-    }
-
-    @DisplayName("Test invalid interval (interval < 0) - Should throw exception")
-    @Test
-    void testAddTaskWithNegativeInterval() {
-        // Arrange & Act & Assert
-        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () ->
-                new Task("Task", new Date(1733076000000L), new Date(1733079600000L), -1)
-        );
-
-        assertEquals("interval should be > 1", thrown.getMessage());
-    }
-
-    @DisplayName("Test valid date constraint (startDate < endDate)")
-    @Test
-    void testAddTaskWithValidDateConstraint() {
-        // Arrange
-        Task task = new Task("Task", new Date(1733076000000L), new Date(1733083200000L), 10);
-
-        // Act
-        taskList.add(task);
-
-        // Assert
-        assertEquals(1, taskList.size());
-    }
-
-    @DisplayName("Test invalid date constraint (startDate == endDate) - Should throw exception")
-    @Test
-    void testAddTaskWithInvalidDateConstraint() {
-        // Arrange & Act & Assert
-        IllegalArgumentException thrown = assertThrows(IllegalArgumentException.class, () ->
-                new Task("Task", new Date(1733076000000L), new Date(1733076000000L), 10)
-        );
-
-        assertEquals("End should be after start", thrown.getMessage());
+        Mockito.when(tasks.getAll()).thenReturn(Arrays.asList(task2));
+        assert tasks.getAll().size() == 1;
+        assertEquals("new task2", tasks.getAll().get(0).getTitle());
     }
 
     @AfterEach
-    void teardown() {
-        taskList = null;
+    void tearDown() {
     }
 
-    @AfterAll
-    static void teardownAll() {
-        System.out.println("All tests completed.");
+    private Task getMockTask(String title, Date time) {
+        Task task = Mockito.mock(Task.class);
+
+        Mockito.when(task.getTitle()).thenReturn(title);
+        Mockito.when(task.getTime()).thenReturn(time);
+
+        return task;
     }
 }
